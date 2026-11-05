@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a50000">
+  <meta name="description" content="UNITED BACK TO THE PEOPLE — An independent international movement uniting Manchester United supporters for transparency, accountability and a stronger supporter voice.">
+  <title>United Back to the People | Our Club. Our Voice.</title>
+  <style>
+    :root {
+      --red: #b00000;
+      --dark-red: #750000;
+      --black: #101010;
+      --white: #fff;
+      --muted: #bdbdbd;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      background: var(--red);
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    header {
+      min-height: 76px;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .brand span { color: #ef2929; }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover { color: #ff5555; }
+
+    .hero {
+      min-height: 650px;
+      padding: 110px 8%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.65)),
+        radial-gradient(circle at 80% 30%, #8d0000, #250000 55%, #090909);
+      border-bottom: 5px solid var(--red);
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .eyebrow {
+      color: #ff5555;
+      font-weight: 900;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: .98;
+      font-weight: 1000;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    h1 span { color: #e51b23; }
+
+    .hero p {
+      color: #ddd;
+      max-width: 620px;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 15px 25px;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 1px;
+      border: 1px solid var(--red);
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      border-color: white;
+    }
+
+    section { padding: 85px 8%; }
+
+    .section-label {
+      color: #ff5555;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      color: #ccc;
+      max-width: 760px;
+      font-size: 17px;
+    }
+
+    .mission { background: #171717; }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 38px;
+    }
+
+    .principle {
+      background: #1c1c1c;
+      border-left: 4px solid var(--red);
+      padding: 27px;
+    }
+
+    .principle h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .principle p {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .statement {
+      text-align: center;
+      background: linear-gradient(130deg, #8e0000, #330000);
+    }
+
+    .statement h2 {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .statement p {
+      margin-top: 20px;
+      color: #eee;
+    }
+
+    .movement { background: #111; }
+
+    .movement-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .movement-note {
+      border: 1px solid #444;
+      padding: 28px;
+      background: #181818;
+    }
+
+    .movement-note strong { color: #ff5555; }
+
+    .join {
+      text-align: center;
+      background: #1a1a1a;
+    }
+
+    .join p {
+      color: #ccc;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      padding: 35px 8%;
+      background: #080808;
+      border-top: 3px solid var(--red);
+      color: #aaa;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer strong { color: white; }
+
+    @media (max-width: 700px) {
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 14px; }
+      .hero { min-height: 540px; padding: 80px 7%; }
+      .principles, .movement-grid { grid-template-columns: 1fr; }
+      section { padding: 65px 7%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    INDEPENDENT • INTERNATIONAL • FAN-LED
+  </div>
+
+  <header>
+    <a href="#" class="brand">UNITED <span>BACK TO THE PEOPLE</span></a>
+    <nav>
+      <a href="#mission">OUR MISSION</a>
+      <a href="#principles">OUR VALUES</a>
+      <a href="#movement">THE MOVEMENT</a>
+      <a href="#join">GET INVOLVED</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">A GLOBAL SUPPORTERS' MOVEMENT</div>
+        <h1>OUR CLUB.<br>OUR HISTORY.<br><span>OUR VOICE.</span></h1>
+        <p>
+          Manchester United is more than a football club.
+          It is a legacy built through generations of supporters.
+          Its future deserves their voice.
+        </p>
+        <a href="#mission" class="button">DISCOVER OUR MISSION →</a>
+      </div>
+    </section>
+
+    <section class="mission" id="mission">
+      <div class="section-label">WHY WE EXIST</div>
+      <h2>THE PEOPLE MUST MATTER.</h2>
+      <p class="intro">
+        UNITED BACK TO THE PEOPLE is an independent international
+        movement uniting Manchester United supporters to advocate
+        for meaningful change. We believe in transparency,
+        accountability, responsible ownership and genuine supporter
+        representation. Our purpose is to connect fans across the
+        world and give them a stronger collective voice in the future
+        of our club.
+      </p>
+    </section>
+
+    <section id="principles">
+      <div class="section-label">WHAT WE STAND FOR</div>
+      <h2>OUR PRINCIPLES.</h2>
+      <div class="principles">
+        <article class="principle">
+          <h3>01. SUPPORTER REPRESENTATION</h3>
+          <p>Supporters deserve meaningful representation in decisions that shape the club's future.</p>
+        </article>
+        <article class="principle">
+          <h3>02. TRANSPARENCY</h3>
+          <p>We advocate for openness, honest communication and greater clarity in club leadership.</p>
+        </article>
+        <article class="principle">
+          <h3>03. ACCOUNTABILITY</h3>
+          <p>Those entrusted with the club's future must be accountable for their decisions.</p>
+        </article>
+        <article class="principle">
+          <h3>04. GLOBAL UNITY</h3>
+          <p>United supporters everywhere deserve a voice, regardless of geography or background.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="statement">
+      <h2>ONE CLUB. MILLIONS OF SUPPORTERS. ONE COLLECTIVE VOICE.</h2>
+      <p>The future of Manchester United should include its people.</p>
+    </section>
+
+    <section class="movement" id="movement">
+      <div class="movement-grid">
+        <div>
+          <div class="section-label">BE PART OF THE CHANGE</div>
+          <h2>THIS IS BIGGER THAN ONE PERSON.</h2>
+          <p class="intro">
+            We are building an international community of supporters
+            committed to peaceful campaigning, education, awareness
+            and collective action. Every supporter has a voice.
+            Together, those voices can make a difference.
+          </p>
+        </div>
+        <div class="movement-note">
+          <h3>OUR COMMITMENT</h3>
+          <p>
+            <strong>Independent.</strong> We are not affiliated with
+            Manchester United Football Club.
+          </p>
+          <br>
+          <p>
+            <strong>Peaceful.</strong> We support lawful, respectful
+            campaigning and constructive dialogue.
+          </p>
+          <br>
+          <p>
+            <strong>International.</strong> Our movement welcomes
+            supporters from every corner of the world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" id="join">
+      <div class="section-label">THE MOVEMENT STARTS WITH US</div>
+      <h2>MAKE YOUR VOICE COUNT.</h2>
+      <p>
+        Follow our journey, share our mission and help connect
+        Manchester United supporters across the world.
+      </p>
+      <a class="button" href="mailto:CONTACT_EMAIL_HERE">
+        CONTACT THE MOVEMENT
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <strong>UNITED BACK TO THE PEOPLE</strong>
+    <p>Our club. Our history. Our voice.</p>
+    <p>Independent supporters' initiative. Not affiliated with or endorsed by Manchester United Football Club.</p>
+    <p>© 2026 UNITED BACK TO THE PEOPLE</p>
+  </footer>
+
+</body>
+</html>
