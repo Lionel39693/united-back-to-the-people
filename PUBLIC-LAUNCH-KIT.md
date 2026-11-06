@@ -25,7 +25,7 @@ https://lionel39693.github.io/united-back-to-the-people/
 
 **OUR CLUB. OUR VOICE. OUR FUTURE.**
 
-#UnitedBackToThePeople #MUFC #ManchesterUnited #FansHaveA声
+#UnitedBackToThePeople #MUFC #ManchesterUnited #FansHaveAVoice
 
 ## Short post
 
