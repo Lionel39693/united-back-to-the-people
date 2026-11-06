@@ -27,7 +27,11 @@ This checklist records the remaining checks for the GitHub Pages site. The live 
 - [ ] Keep personal phone numbers, private email addresses, home/school details, and personal accounts off the public site.
 - [ ] Keep public comments, member sign-ups, fundraising, elections, petitions, and contact submissions disabled until the adult moderator has reviewed and approved the platform, privacy settings, and moderation workflow.
 - [ ] Keep the two poll programmes separate: football questions and ownership/campaign questions.
-- [ ] Test the voting service's privacy, duplicate-response controls, closing date, result export and moderation before enabling voting.
+- [ ] Create the Cloudflare D1 database and run `schema.sql`.
+- [ ] Add the Pages D1 binding named `DB` and Production secret `VOTE_HASH_SECRET`.
+- [ ] Deploy the Pages Functions and test `/api/results` and `/api/vote` from a logged-out browser.
+- [ ] Test duplicate rejection and the shared-network limitation; do not call this identity verification or one-person-one-vote.
+- [ ] Have a trusted adult review the privacy notice, data retention and moderation arrangements before enabling public voting.
 - [ ] Do not describe an open online poll as representative of all Manchester United supporters.
 - [ ] Do not collect phone numbers, school details, home addresses or unnecessary identifying information.
 - [ ] Make clear that this is an independent supporters' initiative and is not affiliated with or endorsed by Manchester United.
@@ -39,6 +43,12 @@ This checklist records the remaining checks for the GitHub Pages site. The live 
 - Voting and ideas box: question sets are prepared, but no public voting/submission service is connected.
 - Football feed: code is prepared, but it is inactive until the API secret is configured and a successful run is verified.
 - News, transfers, women's fixtures and academy updates: require ongoing sourced editorial work; they are not automated.
+
+## Voting implementation notes
+
+The permanent ownership poll stores only a salted hash derived from Cloudflare's network address for duplicate control, never the raw IP. This is pseudonymous network-level control, not identity verification. People sharing a home, school, workplace or carrier network may share one response. Do not publish results as a representative survey of all supporters.
+
+See `CLOUDFLARE-VOTING-SETUP.md` for the exact activation steps.
 
 ## Final release decision
 - [ ] Preview reviewed and corrections completed.
