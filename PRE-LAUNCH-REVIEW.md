@@ -25,12 +25,22 @@ This checklist records the remaining checks for the GitHub Pages site. The live 
 
 ## Safety, privacy, and governance
 - [ ] Keep personal phone numbers, private email addresses, home/school details, and personal accounts off the public site.
-- [ ] Keep public comments, member sign-ups, fundraising, elections, petitions, and contact submissions disabled until the adult moderator has reviewed and approved the platform, privacy settings, and moderation workflow.\n- [ ] Keep the two poll programmes separate: football questions and ownership/campaign questions.\n- [ ] Test the voting service's privacy, duplicate-response controls, closing date, result export and moderation before enabling voting.\n- [ ] Do not describe an open online poll as representative of all Manchester United supporters.\n- [ ] Do not collect phone numbers, school details, home addresses or unnecessary identifying information.
+- [ ] Keep public comments, member sign-ups, fundraising, elections, petitions, and contact submissions disabled until the adult moderator has reviewed and approved the platform, privacy settings, and moderation workflow.
+- [ ] Keep the two poll programmes separate: football questions and ownership/campaign questions.
+- [ ] Test the voting service's privacy, duplicate-response controls, closing date, result export and moderation before enabling voting.
+- [ ] Do not describe an open online poll as representative of all Manchester United supporters.
+- [ ] Do not collect phone numbers, school details, home addresses or unnecessary identifying information.
 - [ ] Make clear that this is an independent supporters' initiative and is not affiliated with or endorsed by Manchester United.
 - [ ] Keep campaign activity peaceful, lawful, evidence-based, and respectful.
 - [ ] Have a trusted adult review any public-facing campaign activity and any legal, financial, or data-protection commitments.
 
-## Known incomplete features (do not advertise as live)\n- Men's archive: 90 original profiles; the 989-player MUFCINFO A–Z register is an external reference and has not been imported into this site's own database.\n- Voting and ideas box: question sets are prepared, but no public voting/submission service is connected.\n- Football feed: code is prepared, but it is inactive until the API secret is configured and a successful run is verified.\n- News, transfers, women's fixtures and academy updates: require ongoing sourced editorial work; they are not automated.\n\n## Final release decision
+## Known incomplete features (do not advertise as live)
+- Men's archive: 90 original profiles; the 989-player MUFCINFO A–Z register is an external reference and has not been imported into this site's own database.
+- Voting and ideas box: question sets are prepared, but no public voting/submission service is connected.
+- Football feed: code is prepared, but it is inactive until the API secret is configured and a successful run is verified.
+- News, transfers, women's fixtures and academy updates: require ongoing sourced editorial work; they are not automated.
+
+## Final release decision
 - [ ] Preview reviewed and corrections completed.
 - [ ] Data and source checks passed.
 - [ ] Privacy and moderation checks passed.
