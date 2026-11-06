@@ -136,8 +136,8 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
     const fill=document.createElement("div");fill.className="result-fill";fill.style.width=pct+"%";track.append(fill);
     row.append(label,track);bars.append(row);
    }
-   message.textContent="Voting service connected. Your response is stored as an anonymous network-level duplicate-control hash; see the limitations above.";
-   submit.disabled=false;status.textContent="Ownership poll service connected — test before public launch.";
+   message.textContent="Voting service connected. The service stores a salted network-address hash for duplicate control; it does not store your raw IP address or ask for your name or email.";
+   submit.disabled=false;status.textContent="Ownership poll service connected — adult-supervised test required before public launch.";const mandateState=document.getElementById("mandate-state");if(mandateState)mandateState.textContent="Voting service connected · launch checks pending";
   }catch(e){
    total.textContent="Results unavailable until the voting database is configured.";
    message.textContent="Voting is not open yet. The Cloudflare database and secret must be configured and tested before public launch.";
