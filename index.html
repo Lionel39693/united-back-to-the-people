@@ -80,6 +80,8 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 .section-eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:950;color:var(--red)}
 @media(max-width:760px){.portal-grid{grid-template-columns:1fr}.football-hub .hub-grid,.football-section .section-grid{grid-template-columns:1fr}}
 
+
+.live-feed{margin:26px 0;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.feed-heading{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.feed-heading h3{margin:3px 0 0;font-size:1.35rem}.feed-status{font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:#f2eee7;color:#62513a}.feed-updated,.feed-source{font-size:.84rem;color:var(--muted)}.feed-list{display:grid;gap:10px;margin:16px 0}.feed-match{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 14px;border:1px solid var(--line);border-radius:12px}.feed-match-date{font-size:.76rem;color:var(--muted);margin-bottom:5px}.feed-match-teams{font-weight:750}.feed-match-score{font-weight:850;font-size:1.08rem;white-space:nowrap}.feed-match-meta{font-size:.75rem;color:var(--muted);text-align:right}.feed-empty{color:var(--muted);margin:0}@media(max-width:560px){.live-feed{padding:16px}.feed-match{grid-template-columns:1fr}.feed-match-score,.feed-match-meta{text-align:left}}
 </style>
 </head>
 <body>
@@ -404,7 +406,13 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 <section class="football-section" id="match-centre"><div class="wrap">
 <div class="section-eyebrow">Fixtures · Results · Matchday</div><h2>Match Centre</h2><p class="lead">A single destination for men's and women's fixtures, results, previews, confirmed line-ups and post-match reporting.</p>
 <div class="section-grid"><article class="feature"><h3>Fixtures &amp; results</h3><p>Competition, opponent, date, kick-off time, venue and final score, updated only from verified fixture sources.</p></article><article class="feature"><h3>Matchday live desk</h3><p>Confirmed starting XIs, substitutes, key events and full-time status. No fabricated live commentary or unverified team news.</p></article><article class="feature"><h3>Post-match reports</h3><p>Scoreline, tactical story, turning points, player performances, coaching decisions and what comes next.</p></article></div>
-<div class="status-note"><strong>Publishing standard:</strong> This is the Match Centre structure. Fixtures and scores will be added as verified updates; no placeholder scores or invented upcoming matches.</div></div></section>
+<div class="live-feed" aria-live="polite">
+  <div class="feed-heading"><div><span class="section-eyebrow">Automatic data feed</span><h3>Manchester United · Premier League</h3></div><span class="feed-status" id="football-feed-status">Checking for updates…</span></div>
+  <p class="feed-updated" id="football-feed-updated">Fixtures and results are supplied by football-data.org.</p>
+  <div class="feed-list" id="football-feed-list"><p class="feed-empty">The automatic feed will appear here after the data connection is activated.</p></div>
+  <p class="feed-source">Data: <a href="https://www.football-data.org/" target="_blank" rel="noopener noreferrer">football-data.org</a> · Refreshes every six hours once the API key is configured.</p>
+</div>
+<div class="status-note"><strong>Publishing standard:</strong> Automated data is limited to the Premier League feed. Women's, academy, transfer and editorial updates remain separately verified before publication.</div></div></section>
 <section class="football-section" id="transfer-centre"><div class="wrap">
 <div class="section-eyebrow">Recruitment · Contracts · Squad planning</div><h2>Transfer Centre</h2><p class="lead">A transparent tracker for men's and women's squad movements, renewals and recruitment reporting.</p>
 <div class="section-grid"><article class="feature"><h3>Official</h3><p>Completed or announced by Manchester United or the relevant club/competition authority.</p></article><article class="feature"><h3>Reported</h3><p>Attributed to identifiable journalists or publications, with links, dates and the exact level of certainty.</p></article><article class="feature"><h3>Rumour / unconfirmed</h3><p>Clearly labelled speculation. We do not upgrade a rumour into a likely deal without evidence.</p></article></div>
@@ -581,5 +589,40 @@ const menu=document.getElementById('menu'),nav=document.getElementById('links');
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
 document.querySelectorAll('.share-button').forEach(button=>button.addEventListener('click',async()=>{const data={title:document.title,text:"UNITED BACK TO THE PEOPLE — Our Club. Our History. Our Voice.",url:location.href};try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);alert('Website link copied. Share it with other United supporters.')}else prompt('Copy this website link:',location.href)}catch(e){if(e.name!=='AbortError')prompt('Copy this website link:',location.href)}}));
+
+async function loadUnitedFootballFeed(){
+ const status=document.getElementById('football-feed-status');
+ const updated=document.getElementById('football-feed-updated');
+ const list=document.getElementById('football-feed-list');
+ if(!status||!updated||!list)return;
+ const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el};
+ try{
+  const response=await fetch('./data/football.json?ts='+Date.now(),{cache:'no-store'});
+  if(!response.ok)throw new Error('Feed not published yet');
+  const data=await response.json();
+  const matches=Array.isArray(data.matches)?data.matches:[];
+  status.textContent='Feed connected';
+  updated.textContent=data.updatedAt?'Last data refresh: '+new Date(data.updatedAt).toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short',timeZone:'Africa/Nairobi'})+' (EAT)':'Waiting for first scheduled refresh.';
+  list.replaceChildren();
+  if(!matches.length){list.append(make('p','feed-empty','No Premier League fixtures are available in the feed yet. The connection will populate this panel after its first successful refresh.'));return;}
+  const now=Date.now();
+  const ordered=[...matches].sort((a,b)=>new Date(a.utcDate)-new Date(b.utcDate));
+  const upcoming=ordered.filter(m=>new Date(m.utcDate).getTime()>=now-36*60*60*1000);
+  const selected=(upcoming.length?upcoming:ordered.slice(-5)).slice(0,8);
+  selected.forEach(match=>{
+   const card=make('article','feed-match');
+   const left=make('div');
+   left.append(make('div','feed-match-date',new Date(match.utcDate).toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Africa/Nairobi'})+' EAT'));
+   left.append(make('div','feed-match-teams',(match.homeTeam||'Home')+'  vs  '+(match.awayTeam||'Away')));
+   const right=make('div');
+   const finished=['FINISHED','AWARDED'].includes(match.status);
+   const score=finished&&match.homeScore!==null&&match.awayScore!==null?match.homeScore+' – '+match.awayScore:(match.status==='IN_PLAY'||match.status==='PAUSED'?'LIVE':match.status==='POSTPONED'?'Postponed':match.status==='CANCELLED'?'Cancelled':'Upcoming');
+   right.append(make('div','feed-match-score',score));
+   right.append(make('div','feed-match-meta',match.venue||match.competition||'Premier League'));
+   card.append(left,right);list.append(card);
+  });
+ }catch(error){status.textContent='Awaiting setup';updated.textContent='The feed will go live after the API key is added to the repository securely.';list.replaceChildren(make('p','feed-empty','Automatic fixtures and results are not connected yet. No scores are being invented.'));}
+}
+loadUnitedFootballFeed();
 </script>
 </body></html>
