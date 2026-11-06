@@ -32,13 +32,32 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 @media(max-width:850px){.learning-grid{grid-template-columns:repeat(2,1fr)}.files-grid,.ownership-steps,.heritage-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.saga-grid,.charter-grid,.files-grid,.ownership-steps,.heritage-grid{grid-template-columns:1fr}.learning-grid{grid-template-columns:1fr 1fr}}
 .facts-grid,.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.fact-card,.faq-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px}.fact-card h3,.faq-card h3{margin:0 0 7px}.fact-card p,.faq-card p{margin:0;color:var(--muted);font-size:.91rem}.fact-card .label{display:inline-block;color:var(--red);font-size:.68rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}@media(max-width:560px){.facts-grid,.faq-grid{grid-template-columns:1fr}}
 .ballondor-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.ballondor-table th,.ballondor-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.88rem}.ballondor-table th{background:#201f1f;color:#fff}.ballondor-table td:first-child{font-weight:900;white-space:nowrap;width:78px}.ballondor-table tr:last-child td{border-bottom:0}.award-highlight{background:#fff7e8}.award-note{font-size:.86rem;color:var(--muted)}.yearbook-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.yearbook-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px}.yearbook-card b{display:block;color:var(--red);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}.yearbook-card p{margin:0;color:var(--muted);font-size:.9rem}.record-list{columns:2;column-gap:28px}.record-list li{break-inside:avoid;margin-bottom:8px;font-size:.9rem}@media(max-width:700px){.yearbook-grid{grid-template-columns:1fr 1fr}.record-list{columns:1}.ballondor-table th,.ballondor-table td{padding:8px;font-size:.82rem}}@media(max-width:460px){.yearbook-grid{grid-template-columns:1fr}}
+
+/* Independent newsroom */
+.newsroom{padding:76px 0;background:#fff;border-bottom:1px solid var(--line)}
+.newsroom .desk-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:28px}
+.newsroom .desk-card{background:#f7f5f1;border:1px solid var(--line);border-radius:18px;padding:24px}
+.newsroom .desk-card.dark{background:#191919;color:#fff;border-color:#191919}
+.newsroom .desk-card h3{margin:8px 0 10px;font-size:1.3rem;line-height:1.2}
+.newsroom .desk-card p{margin:0;color:var(--muted)}
+.newsroom .desk-card.dark p{color:#ddd}
+.newsroom .desk-label{font-size:.7rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.newsroom .desk-card.dark .desk-label{color:#e7c77e}
+.newsroom .coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.newsroom .coverage-item{padding:19px;border:1px solid var(--line);border-radius:15px;background:#fff}
+.newsroom .coverage-item h4{margin:0 0 7px;font-size:1rem}
+.newsroom .coverage-item p{margin:0;color:var(--muted);font-size:.9rem}
+.newsroom .editorial-note{margin-top:20px;padding:16px 18px;border-left:4px solid var(--red);background:#f7f5f1;border-radius:0 12px 12px 0;font-size:.92rem}
+.newsroom .editorial-note strong{display:block;margin-bottom:4px}
+@media(max-width:760px){.newsroom .desk-grid{grid-template-columns:1fr}.newsroom .coverage-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <div class="topline">Independent supporters' initiative · International · Peaceful and democratic</div>
 <header><div class="wrap nav">
 <a class="brand" href="#home" aria-label="United Back to the People home"><span class="crest">U</span><span>UNITED BACK<br>TO THE PEOPLE</span></a>
-<nav class="links" id="links" aria-label="Main navigation"><a href="#learning-index">Explore</a><a href="#history">History</a><a href="#sagas">Sagas</a><a href="#ballon-dor">Ballon d’Or</a><a href="#yearbook">Yearbook</a><a href="#legends">Legends</a><a href="#greatest-squads">Squads &amp; trophies</a><a href="#glazer-era">Ownership</a><a href="#charter">Charter</a><a href="#united-worldwide">Worldwide</a><a href="#ownership-model">Fan ownership</a><a href="#accountability">Evidence</a><a href="#manifesto">Manifesto</a><a href="#voice">Supporter voice</a></nav>
+<nav class="links" id="links" aria-label="Main navigation"><a href="#newsroom">Newsroom</a><a href="#learning-index">Explore</a><a href="#history">History</a><a href="#sagas">Sagas</a><a href="#ballon-dor">Ballon d’Or</a><a href="#yearbook">Yearbook</a><a href="#legends">Legends</a><a href="#greatest-squads">Squads &amp; trophies</a><a href="#glazer-era">Ownership</a><a href="#charter">Charter</a><a href="#united-worldwide">Worldwide</a><a href="#ownership-model">Fan ownership</a><a href="#accountability">Evidence</a><a href="#manifesto">Manifesto</a><a href="#voice">Supporter voice</a></nav>
 <a class="nav-cta" href="#voice">Have your say ↗</a><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="links">☰</button>
 </div></header>
 <main>
@@ -294,6 +313,31 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 <p class="history-sources">Sources: <a href="https://www.bbc.co.uk/sport/football/articles/cd9lwdegxvxo" target="_blank" rel="noopener">BBC Verify: How the Glazer family cost Manchester United £1.2bn (6 June 2025)</a> · <a href="https://www.bbc.co.uk/sport/football/articles/c4gq70yqv0do" target="_blank" rel="noopener">BBC Sport: United debt and liabilities (25 February 2026)</a> · <a href="https://www.theguardian.com/football/2021/may/02/timeline-glazers-and-their-turbulent-reign-at-manchester-united" target="_blank" rel="noopener">The Guardian: Glazer ownership timeline</a> · <a href="https://www.skysports.com/football/transfer-paper-talk" target="_blank" rel="noopener">Sky Sports: report of Avram Glazer's recent comments (5 November 2026)</a> · <a href="https://www.aol.co.uk/articles/glazer-family-rare-public-man-121200000.html" target="_blank" rel="noopener">AOL summary of the reported September 2026 remarks</a></p>
 </div></section>
 
+
+<section class="newsroom" id="newsroom">
+<div class="wrap">
+<div class="head"><div class="kicker">The independent United newsroom</div><h2>Every story. Every match. Every voice.</h2><p class="lead">A fan-led newsroom for Manchester United: timely club updates, transfer developments, matchday coverage and analysis that goes beyond the scoreline.</p></div>
+<div class="desk-grid">
+<article class="desk-card dark"><div class="desk-label">Our editorial promise</div><h3>Fast with the facts. Honest with the opinion.</h3><p>We will separate confirmed news from reports, rumours and our own analysis. We will link to original sources, correct mistakes openly and never present speculation as fact.</p></article>
+<article class="desk-card"><div class="desk-label">The newsroom desk</div><h3>What's happening around United?</h3><p>This is the home for the latest editorial updates. Stories will be published here as they are researched and verified — no invented headlines or recycled rumours.</p></article>
+</div>
+<div class="coverage-grid">
+<article class="coverage-item"><div class="desk-label">01 · Daily coverage</div><h4>United news desk</h4><p>Club announcements, manager press conferences, player updates, injuries when officially confirmed, academy news, women's team news and ownership developments.</p></article>
+<article class="coverage-item"><div class="desk-label">02 · Matchday</div><h4>Before, during and after</h4><p>Fixture previews, confirmed team news, tactical questions, key moments, full-time reaction and a considered match report.</p></article>
+<article class="coverage-item"><div class="desk-label">03 · The bigger picture</div><h4>Analysis &amp; debate</h4><p>Formations, pressing, build-up, transitions, set pieces, player roles, recruitment, coaching decisions and supporter perspectives.</p></article>
+</div>
+<div class="head" style="margin-top:42px"><div class="kicker">Our match report format</div><h2>More than a player-rating graphic.</h2><p class="lead">Every full post-match analysis should answer what happened, why it happened and what United can learn from it.</p></div>
+<div class="coverage-grid">
+<article class="coverage-item"><h4>01. The result &amp; context</h4><p>Competition, venue, score, opponent, match state and what the result means.</p></article>
+<article class="coverage-item"><h4>02. Tactical breakdown</h4><p>Shape in and out of possession, pressing triggers, build-up routes, space conceded and key adjustments.</p></article>
+<article class="coverage-item"><h4>03. Turning points</h4><p>Decisive chances, substitutions, defensive moments and momentum shifts — explained with evidence.</p></article>
+<article class="coverage-item"><h4>04. Player performances</h4><p>Role-based assessments: defending, movement, decision-making, passing, work rate and influence.</p></article>
+<article class="coverage-item"><h4>05. Manager &amp; team</h4><p>What the plan tried to do, what worked, what did not and what could change next time.</p></article>
+<article class="coverage-item"><h4>06. Supporter verdict</h4><p>A clearly labelled opinion section, plus a question that invites respectful debate.</p></article>
+</div>
+<div class="editorial-note"><strong>Independence and accuracy rules</strong>UNITED BACK TO THE PEOPLE is an independent supporters' project, not an official Manchester United outlet and not affiliated with The United Stand. We will not copy their branding or content. We will use our own words, link and credit sources, label transfer stories by reliability, avoid sharing unverified personal claims, and never reproduce match broadcasts or copyrighted articles.</div>
+<div class="editorial-note"><strong>How we will launch responsibly</strong>We are starting with written updates and match analysis. Live audience submissions, comments, polls and direct contact stay closed until secure moderation and trusted adult oversight are in place. The founder's private contact details will not be published.</div>
+</div></section>
 
 <section class="learning-index" id="learning-index"><div class="wrap"><div class="head"><div class="kicker">The United learning hub</div><h2>New to United? Start here.</h2><p class="lead">A guided route through the club: origins, eras, trophies, people, turning points, ownership and the future. Work through the chapters in any order, follow the sources and make up your own mind.</p></div><div class="learning-grid"><a href="#history">01 · Origins and timeline</a><a href="#sagas">02 · Famous sagas</a><a href="#legends">03 · Players and legends</a><a href="#greatest-squads">04 · Teams and trophies</a><a href="#glazer-era">05 · Ownership history</a><a href="#united-worldwide">06 · United worldwide</a><a href="#ownership-model">07 · Supporter ownership</a><a href="#manifesto">08 · Our future vision</a><a href="#ballon-dor">Ballon d’Or winners</a><a href="#yearbook">Yearbook</a><a href="#myths-facts">09 · Myth vs fact</a><a href="#supporter-questions">10 · Supporter questions</a></div><div class="note-panel"><strong>How this archive works:</strong> Historical events are presented with sources. Where accounts differ, we say so. Campaign positions are labelled as positions—not neutral historical facts. This is a growing guide, not a claim that one page can contain every match, player or debate.</div></div></section>
 
