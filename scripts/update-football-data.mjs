@@ -17,6 +17,31 @@ if (!response.ok) {
 }
 
 const payload = await response.json();
+
+const standingsEndpoint = new URL("https://api.football-data.org/v4/competitions/PL/standings");
+const standingsResponse = await fetch(standingsEndpoint, {
+  headers: { "X-Auth-Token": token, "User-Agent": "UnitedFootballDesk/1.0" }
+});
+if (!standingsResponse.ok) {
+  const detail = await standingsResponse.text();
+  throw new Error(`Premier League standings request failed (${standingsResponse.status}): ${detail.slice(0, 400)}`);
+}
+const standingsPayload = await standingsResponse.json();
+const totalTable = (standingsPayload.standings || []).find((table) => table.type === "TOTAL");
+const standings = (totalTable?.table || []).map((row) => ({
+  position: row.position,
+  team: row.team?.name || "Unknown team",
+  crest: row.team?.crest || null,
+  played: row.playedGames,
+  won: row.won,
+  drawn: row.draw,
+  lost: row.lost,
+  goalsFor: row.goalsFor,
+  goalsAgainst: row.goalsAgainst,
+  goalDifference: row.goalDifference,
+  points: row.points
+}));
+
 const matches = (payload.matches || []).map((match) => ({
   id: match.id,
   competition: match.competition?.name || "Premier League",
@@ -41,6 +66,8 @@ await writeFile("data/football.json", JSON.stringify({
   teamId: 66,
   updatedAt: new Date().toISOString(),
   source: "football-data.org",
+  standings,
+  currentMatchday: standingsPayload.season?.currentMatchday ?? null,
   matches
 }, null, 2) + "\n");
 console.log(`Saved ${matches.length} Manchester United Premier League matches.`);
