@@ -218,3 +218,30 @@ In `polls-config.js`, add the published Google Forms embed URL for:
 - `glazerMandateEmbedUrl`
 
 Existing keys for the football, ownership and ideas forms remain available. The page reports how many of the five forms are connected. Test each form in a logged-out/incognito browser and on mobile before launch.
+
+
+## Permanent Glazer ownership poll — The Ownership Mandate
+
+**Campaign line:** **OUR CLUB. OUR VOICE. OUR FUTURE.**
+
+This is one permanent question, not a weekly poll:
+
+**Should the Glazer family continue as Manchester United's controlling owners?**
+
+- Yes — they should remain as controlling owners.
+- No — Manchester United needs a change in controlling ownership.
+- Undecided — I need more information before choosing.
+
+Keep this poll open until the first campaign milestone of **10,000 responses**. At that point, close the collection period, publish the results and method transparently, and issue a peaceful, evidence-led next-step proposal. This milestone is not a legal threshold and cannot itself change the club's ownership.
+
+### Form settings and public results
+
+- Prefer one response per person if the form's sign-in requirement is acceptable; clearly disclose that Google sign-in is required.
+- If the form is open without sign-in, state plainly that duplicate responses cannot reliably be prevented.
+- Do not call responses "verified supporters" or "unique supporters" unless the actual settings and data support that description.
+- Enable public response summaries only if the results can be viewed safely without exposing respondent-level information.
+- Test both the voting form and public results page in a logged-out/incognito browser and on mobile.
+- Add the published embed URL to `glazerMandateEmbedUrl` in `polls-config.js`.
+- Add the public summary/results URL to `glazerMandateResultsUrl`. Leave it blank until public results are enabled and tested.
+
+At 10,000 responses, publish the exact question, collection dates, response total, answer counts and percentages, settings, duplicate-control limits, and the self-selection limitations of the online consultation. Never inflate totals or imply the consultation legally compels a sale.

@@ -44,25 +44,29 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
  <div class="pending" id="weekly-pending">The three-question football round will appear here after its public form is connected and tested.</div>
 </section>
 <section class="poll" style="margin-top:18px" id="glazer-mandate">
- <div class="tag">Programme 05 · Ownership accountability</div>
- <h2>The Glazer accountability &amp; supporter mandate</h2>
- <p>A focused space for supporters to record their views on the Glazer ownership era, the club's finances and governance, and the future they want. This is a peaceful, evidence-led campaign consultation—not a legal mechanism to remove an owner.</p>
- <ol class="questions">
-  <li>Do you believe Manchester United would be better off without the Glazer family as controlling owners, even if the replacement ownership were not perfect?</li>
-  <li>Which ownership model should replace the current arrangement?</li>
-  <li>What minimum supporter rights should any future owner guarantee?</li>
-  <li>Which issue should the campaign prioritise: debt and financing, transparency, supporter representation, stadium investment, or ownership change?</li>
-  <li>Would you support a peaceful, evidence-based international campaign calling for accountable ownership and meaningful supporter representation?</li>
- </ol>
- <span class="poll-state" id="mandate-state">Supporter mandate connection pending</span>
+ <div class="tag">Permanent ownership poll · Programme 05</div>
+ <h2>The Ownership Mandate</h2>
+ <p><strong>OUR CLUB. OUR VOICE. OUR FUTURE.</strong></p>
+ <p>This is the campaign's permanent public question. It is separate from weekly football debates and will remain open until the first milestone of 10,000 responses is reached, then the campaign will publish its results and next-step proposal.</p>
+ <div class="notice" style="margin:18px 0">
+  <strong>Should the Glazer family continue as Manchester United's controlling owners?</strong>
+  <ol class="questions">
+   <li>Yes — they should remain as controlling owners.</li>
+   <li>No — Manchester United needs a change in controlling ownership.</li>
+   <li>Undecided — I need more information before choosing.</li>
+  </ol>
+ </div>
+ <p>One response per person is the preferred standard. If the form requires Google sign-in, that must be disclosed. If it is open without sign-in, duplicate responses cannot reliably be prevented. We will report the actual response count and the collection method, not claim that every response is a verified supporter.</p>
+ <span class="poll-state" id="mandate-state">Permanent poll connection pending</span>
  <div class="embed" id="mandate-embed" hidden></div>
- <div class="pending" id="mandate-pending">The supporter mandate form will appear here once its published responder link is connected and tested.</div>
+ <div class="pending" id="mandate-pending">The permanent ownership poll is not collecting responses yet. Its published Google Forms link must be connected and tested before the campaign announces voting.</div>
+ <p id="mandate-results" class="fine" hidden><a id="mandate-results-link" href="#" target="_blank" rel="noopener">View public poll results</a></p>
 </section>
 <section class="rules" id="milestone">
- <h2>Our first public milestone: 10,000 supporters</h2>
- <p>Our first target is <strong>10,000 unique supporter responses</strong> from around the world. This is a campaign-building milestone—not a vote that legally removes the owners or automatically changes the club's ownership.</p>
- <p>When the target is reached, publish a transparent report: verified response total, countries represented where voluntarily and safely provided, exact questions, collection method, duplicate controls, limitations, and a supporter-led set of next steps. The campaign can then present its evidence and proposals to supporter groups, the club, shareholders, journalists and potential allies.</p>
- <p>We will not inflate numbers, count repeat submissions as separate supporters, or claim to speak for every United fan. One person, one response per poll round is the credibility standard. New weekly rounds allow supporters to keep taking part without corrupting the count.</p>
+ <h2>First milestone: 10,000 responses</h2>
+ <p>The permanent ownership poll stays open until it reaches <strong>10,000 responses</strong>. This is a campaign mobilisation milestone, not a legal threshold and not a mechanism that forces an ownership change.</p>
+ <p>At the milestone, publish a transparent report with the exact question, opening and closing dates, response count, voting settings, duplicate-control limits, results by option, and the limitations of an open online consultation. Then publish a peaceful, evidence-led next-step proposal for supporter groups, club representatives, shareholders and media.</p>
+ <p>We will not inflate the total or describe responses as unique or verified unless the form settings genuinely support that claim. Reaching the target does not itself transfer ownership or compel the club to act.</p>
 </section>
 
 <section class="rules"><h2>How we handle responses</h2><ul><li>Each form will display its exact question, opening and closing dates, and response method.</li><li>We will publish response counts and results only after checking the form's data.</li><li>An open online consultation is not a formal vote of all Manchester United supporters.</li><li>We will not claim anonymity, one-person-one-vote or verified supporter status unless the form settings genuinely provide it.</li><li>Do not submit phone numbers, home addresses, school details, passwords or other private information.</li><li>Ideas and comments are moderated. Abuse, threats, discrimination and personal allegations will not be published.</li></ul><p>Independent supporters' project. Not affiliated with or endorsed by Manchester United Football Club.</p></section>
@@ -85,6 +89,12 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
    frame.loading="lazy";frame.referrerPolicy="strict-origin-when-cross-origin";
    embed.appendChild(frame);embed.hidden=false;pending.hidden=true;state.textContent="Connected · Google Forms";connected++;
   }
+ }
+ const resultsUrl=config.glazerMandateResultsUrl;
+ if(typeof resultsUrl==="string" && /^https:\/\/docs\.google\.com\/forms\//.test(resultsUrl)){
+  const results=document.getElementById("mandate-results");
+  const link=document.getElementById("mandate-results-link");
+  link.href=resultsUrl;results.hidden=false;
  }
  if(connected===5)document.getElementById("launch-status").textContent="All five consultation forms are connected. Complete the launch tests before announcing the polls publicly.";
  else if(connected>0)document.getElementById("launch-status").textContent=connected+" of 5 forms are connected. Any unconnected form is not collecting responses through this page.";
