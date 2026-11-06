@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8f1018">
+<meta name="description" content="The official consultation hub for the independent UNITED BACK TO THE PEOPLE supporters' project.">
+<title>Supporter Voice &amp; Voting | UNITED BACK TO THE PEOPLE</title>
+<style>
+:root{--red:#a5121b;--deep:#710b12;--ink:#171717;--paper:#f7f5f1;--muted:#686868;--line:#e5e0d9;--gold:#d7b46a;--max:1060px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{text-decoration:none;font-weight:950;letter-spacing:-.03em}.brand b{display:inline-grid;place-items:center;background:var(--red);color:white;border-radius:10px;width:38px;height:38px;margin-right:9px}.back{font-weight:800;color:var(--red);text-decoration:none;font-size:.9rem}
+.hero{background:linear-gradient(120deg,#710b12,#a5121b);color:white;padding:72px 0}.eyebrow{font-size:.72rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}h1{font-size:clamp(2.6rem,7vw,5rem);line-height:.95;letter-spacing:-.07em;margin:14px 0 18px}.hero p{max-width:720px;color:#f1dfe0;font-size:1.08rem;margin:0}
+main{padding:48px 0 76px}.notice{padding:18px 20px;background:#fff7e8;border:1px solid #ead8b6;border-radius:14px;margin-bottom:28px}.notice strong{display:block;margin-bottom:4px}.notice p{margin:0;color:#66543a;font-size:.92rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.poll{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;min-width:0}.tag{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--red);font-weight:950}.poll h2{font-size:1.65rem;line-height:1.1;letter-spacing:-.04em;margin:9px 0}.poll>p{color:var(--muted);font-size:.93rem}.questions{padding-left:20px;color:#444;font-size:.9rem}.questions li{margin:7px 0}.poll-state{display:inline-block;background:#f3f0ea;color:#62543e;padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:900;margin-top:8px}
+.embed{margin-top:18px;border-top:1px solid var(--line);padding-top:18px}.embed iframe{display:block;width:100%;min-height:780px;border:0;background:white}.embed[hidden]{display:none}.pending{background:#f7f5f1;border:1px dashed #c9c1b7;padding:15px;border-radius:12px;color:#655f58;font-size:.88rem;margin-top:16px}
+.ideas{margin-top:18px}.rules{background:#171717;color:white;padding:26px;border-radius:18px;margin-top:24px}.rules h2{margin:0 0 10px}.rules ul{padding-left:20px;color:#ddd}.rules li{margin:7px 0}.rules p{color:#ccc;font-size:.9rem}
+footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:white}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding:56px 0}.poll{padding:20px}.embed iframe{min-height:850px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="./index.html"><b>MU</b> UNITED BACK TO THE PEOPLE</a><a class="back" href="./index.html#voice">← Main website</a></div></header>
+<section class="hero"><div class="wrap"><div class="eyebrow">Supporter voice · Consultation hub</div><h1>Our club.<br>Our voice.</h1><p>This is the home for supporter consultations. Football discussions and questions about the club's ownership are kept separate so every response is understood in the right context.</p></div></section>
+<main class="wrap">
+<div class="notice"><strong>Voting launch status</strong><p id="launch-status">The consultation pages are published. The live forms are not connected yet, so no votes are being collected on this page. We will display a form only after its public link has been added and tested.</p></div>
+<div class="grid">
+<article class="poll" id="football"><div class="tag">Programme 01 · Football</div><h2>The Footballing Side</h2><p>Questions about Manchester United's football teams, history and sporting direction. These are supporter opinion polls, not official club decisions.</p><ol class="questions"><li>Who is United's greatest captain?</li><li>Which centre-back partnership was strongest?</li><li>Who is the greatest player in the club's history?</li><li>Which manager had the greatest United legacy?</li><li>What is the club's greatest moment?</li><li>What should the men's and women's teams prioritise?</li></ol><span class="poll-state" id="football-state">Form connection pending</span><div class="embed" id="football-embed" hidden></div><div class="pending" id="football-pending">The football poll form will appear here once its published embed link is connected.</div></article>
+<article class="poll" id="movement"><div class="tag">Programme 02 · Ownership &amp; governance</div><h2>UNITED BACK TO THE PEOPLE</h2><p>A separate consultation about the future relationship between Manchester United and its supporters. It records views; it does not claim to represent every supporter.</p><ol class="questions"><li>What ownership model should United work towards?</li><li>What formal role should supporters have in governance?</li><li>Which accountability issue needs attention?</li><li>What financial information should be explained more clearly?</li><li>How should supporter representatives be selected and held accountable?</li></ol><span class="poll-state" id="movement-state">Form connection pending</span><div class="embed" id="movement-embed" hidden></div><div class="pending" id="movement-pending">The ownership and governance form will appear here once its published embed link is connected.</div></article>
+</div>
+<article class="poll ideas" id="ideas"><div class="tag">Programme 03 · Constructive ideas</div><h2>Supporter ideas box</h2><p>Use this space to suggest practical improvements, ask governance questions or submit sourced corrections. Submissions are reviewed before anything is published or quoted.</p><span class="poll-state" id="ideas-state">Form connection pending</span><div class="embed" id="ideas-embed" hidden></div><div class="pending" id="ideas-pending">The moderated ideas form will appear here once its published embed link is connected.</div></article>
+<section class="rules"><h2>How we handle responses</h2><ul><li>Each form will display its exact question, opening and closing dates, and response method.</li><li>We will publish response counts and results only after checking the form's data.</li><li>An open online consultation is not a formal vote of all Manchester United supporters.</li><li>We will not claim anonymity, one-person-one-vote or verified supporter status unless the form settings genuinely provide it.</li><li>Do not submit phone numbers, home addresses, school details, passwords or other private information.</li><li>Ideas and comments are moderated. Abuse, threats, discrimination and personal allegations will not be published.</li></ul><p>Independent supporters' project. Not affiliated with or endorsed by Manchester United Football Club.</p></section>
+</main>
+<footer><div class="wrap"><span>UNITED BACK TO THE PEOPLE · Our club. Our history. Our voice.</span><a href="./index.html">Return to the main website</a></div></footer>
+<script src="./polls-config.js"></script>
+<script>
+(function(){
+ const config=window.UBTP_POLL_CONFIG||{};
+ const items=[["football","footballEmbedUrl"],["movement","movementEmbedUrl"],["ideas","ideasEmbedUrl"]];
+ let connected=0;
+ for(const [id,key] of items){
+  const url=config[key];
+  const embed=document.getElementById(id+"-embed");
+  const pending=document.getElementById(id+"-pending");
+  const state=document.getElementById(id+"-state");
+  if(typeof url==="string" && /^https:\/\/docs\.google\.com\/forms\/.*viewform/.test(url)){
+   const frame=document.createElement("iframe");
+   frame.src=url;frame.title=id==="football"?"Footballing Side supporter poll":id==="movement"?"Ownership and governance supporter poll":"Supporter ideas submission form";
+   frame.loading="lazy";frame.referrerPolicy="strict-origin-when-cross-origin";
+   embed.appendChild(frame);embed.hidden=false;pending.hidden=true;state.textContent="Connected · Google Forms";connected++;
+  }
+ }
+ if(connected===3)document.getElementById("launch-status").textContent="All three forms are connected. Please complete the launch test before sharing the consultation publicly.";
+ else if(connected>0)document.getElementById("launch-status").textContent=connected+" of 3 forms are connected. The remaining forms are not yet collecting responses through this page.";
+})();
+</script>
+</body>
+</html>
