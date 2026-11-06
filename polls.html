@@ -62,6 +62,23 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
  <div class="pending" id="mandate-pending">The permanent ownership poll is not collecting responses yet. Its published Google Forms link must be connected and tested before the campaign announces voting.</div>
  <p id="mandate-results" class="fine" hidden><a id="mandate-results-link" href="#" target="_blank" rel="noopener">View public poll results</a></p>
 </section>
+
+<section class="poll" style="margin-top:18px" id="beckham-takeover">
+ <div class="tag">Programme 06 · The hypothetical takeover debate</div>
+ <h2>The Beckham takeover: would you rather?</h2>
+ <p><strong>Would you prefer a David Beckham-led takeover of Manchester United over continued Glazer ownership?</strong></p>
+ <p class="fine">A cheeky hypothetical supporter question — not a claim that David Beckham has announced or proposed a takeover. A Beckham-led bid would still need a credible ownership structure, financing and a clear plan for the club.</p>
+ <ol class="questions">
+  <li>Absolutely — I'd prefer a Beckham-led takeover.</li>
+  <li>No — I'd prefer a different new ownership option.</li>
+  <li>Neither — I want genuine supporter ownership.</li>
+  <li>Undecided — I need more information first.</li>
+ </ol>
+ <span class="poll-state" id="beckham-state">Debate poll connection pending</span>
+ <div class="embed" id="beckham-embed" hidden></div>
+ <div class="pending" id="beckham-pending">This question is published for discussion, but voting is not open yet. A published form must be connected and tested before responses are collected.</div>
+</section>
+
 <section class="rules" id="milestone">
  <h2>First milestone: 10,000 responses</h2>
  <p>The permanent ownership poll stays open until it reaches <strong>10,000 responses</strong>. This is a campaign mobilisation milestone, not a legal threshold and not a mechanism that forces an ownership change.</p>
@@ -76,7 +93,7 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
 <script>
 (function(){
  const config=window.UBTP_POLL_CONFIG||{};
- const items=[["football","footballEmbedUrl"],["movement","movementEmbedUrl"],["ideas","ideasEmbedUrl"],["weekly","weeklyFootballEmbedUrl"],["mandate","glazerMandateEmbedUrl"]];
+ const items=[["football","footballEmbedUrl"],["movement","movementEmbedUrl"],["ideas","ideasEmbedUrl"],["weekly","weeklyFootballEmbedUrl"],["mandate","glazerMandateEmbedUrl"],["beckham","beckhamTakeoverEmbedUrl"]];
  let connected=0;
  for(const [id,key] of items){
   const url=config[key];
@@ -85,7 +102,7 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
   const state=document.getElementById(id+"-state");
   if(typeof url==="string" && /^https:\/\/docs\.google\.com\/forms\/.*viewform/.test(url)){
    const frame=document.createElement("iframe");
-   frame.src=url;frame.title=id==="football"?"Footballing Side supporter poll":id==="movement"?"Ownership and governance supporter poll":"Supporter ideas submission form";
+   frame.src=url;frame.title=id==="football"?"Footballing Side supporter poll":id==="movement"?"Ownership and governance supporter poll":id==="beckham"?"Hypothetical Beckham takeover debate poll":"Supporter ideas submission form";
    frame.loading="lazy";frame.referrerPolicy="strict-origin-when-cross-origin";
    embed.appendChild(frame);embed.hidden=false;pending.hidden=true;state.textContent="Connected · Google Forms";connected++;
   }
@@ -96,7 +113,7 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
   const link=document.getElementById("mandate-results-link");
   link.href=resultsUrl;results.hidden=false;
  }
- if(connected===5)document.getElementById("launch-status").textContent="All five consultation forms are connected. Complete the launch tests before announcing the polls publicly.";
+ if(connected===6)document.getElementById("launch-status").textContent="All five consultation forms are connected. Complete the launch tests before announcing the polls publicly.";
  else if(connected>0)document.getElementById("launch-status").textContent=connected+" of 5 forms are connected. Any unconnected form is not collecting responses through this page.";
 })();
 </script>
