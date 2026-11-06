@@ -21,3 +21,10 @@ This is a campaign slogan expressing supporters' frustration with the commercial
 - Responsible financial stewardship.
 - Respect for Manchester United's history and heritage.
 - An informed, inclusive international supporters' movement.
+
+## The Glazer ownership chapter
+
+The website's **The Glazer era** section documents the 2003–2026 ownership story, including the 2005 leveraged buyout, debt and financing costs, supporter protests, share sales, the post-Ferguson period, the 2024 INEOS minority investment, current liabilities, infrastructure questions and Avram Glazer's reported September 2026 remarks.
+
+The chapter distinguishes documented financial facts from supporter criticism and includes context on commercial growth and trophies during the same period. Sources are linked in the website section.
+
