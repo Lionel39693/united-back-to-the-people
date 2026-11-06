@@ -82,6 +82,8 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 
 
 .live-feed{margin:26px 0;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}.feed-heading{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.feed-heading h3{margin:3px 0 0;font-size:1.35rem}.feed-status{font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:#f2eee7;color:#62513a}.feed-updated,.feed-source{font-size:.84rem;color:var(--muted)}.feed-list{display:grid;gap:10px;margin:16px 0}.feed-match{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 14px;border:1px solid var(--line);border-radius:12px}.feed-match-date{font-size:.76rem;color:var(--muted);margin-bottom:5px}.feed-match-teams{font-weight:750}.feed-match-score{font-weight:850;font-size:1.08rem;white-space:nowrap}.feed-match-meta{font-size:.75rem;color:var(--muted);text-align:right}.feed-empty{color:var(--muted);margin:0}@media(max-width:560px){.live-feed{padding:16px}.feed-match{grid-template-columns:1fr}.feed-match-score,.feed-match-meta{text-align:left}}
+
+.standings-panel{margin-top:22px}.standings-panel h3{margin:0 0 10px}.table-scroll{overflow-x:auto}.league-table{width:100%;border-collapse:collapse;font-size:.82rem;white-space:nowrap}.league-table th,.league-table td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right}.league-table th:nth-child(2),.league-table td:nth-child(2){text-align:left}.league-table tbody tr.united-row{background:#fff0f0;font-weight:800}.league-table tbody tr td:first-child{font-weight:800}
 </style>
 </head>
 <body>
@@ -410,7 +412,11 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
   <div class="feed-heading"><div><span class="section-eyebrow">Automatic data feed</span><h3>Manchester United · Premier League</h3></div><span class="feed-status" id="football-feed-status">Checking for updates…</span></div>
   <p class="feed-updated" id="football-feed-updated">Fixtures and results are supplied by football-data.org.</p>
   <div class="feed-list" id="football-feed-list"><p class="feed-empty">The automatic feed will appear here after the data connection is activated.</p></div>
-  <p class="feed-source">Data: <a href="https://www.football-data.org/" target="_blank" rel="noopener noreferrer">football-data.org</a> · Refreshes every six hours once the API key is configured.</p>
+  <div class="standings-panel">
+    <h3>Premier League table</h3>
+    <div class="table-scroll"><table class="league-table"><thead><tr><th>Pos</th><th>Club</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody id="football-standings-body"><tr><td colspan="8">League table will appear after the first successful refresh.</td></tr></tbody></table></div>
+  </div>
+  <p class="feed-source">Data: <a href="https://www.football-data.org/" target="_blank" rel="noopener noreferrer">football-data.org</a> · Fixtures and table refresh every six hours once the API key is configured.</p>
 </div>
 <div class="status-note"><strong>Publishing standard:</strong> Automated data is limited to the Premier League feed. Women's, academy, transfer and editorial updates remain separately verified before publication.</div></div></section>
 <section class="football-section" id="transfer-centre"><div class="wrap">
@@ -605,6 +611,14 @@ async function loadUnitedFootballFeed(){
   updated.textContent=data.updatedAt?'Last data refresh: '+new Date(data.updatedAt).toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short',timeZone:'Africa/Nairobi'})+' (EAT)':'Waiting for first scheduled refresh.';
   list.replaceChildren();
   if(!matches.length){list.append(make('p','feed-empty','No Premier League fixtures are available in the feed yet. The connection will populate this panel after its first successful refresh.'));return;}
+
+  const tableBody=document.getElementById('football-standings-body');
+  if(tableBody){
+   tableBody.replaceChildren();
+   const rows=Array.isArray(data.standings)?data.standings:[];
+   if(!rows.length){const tr=make('tr');tr.append(make('td','','League table unavailable in the current data response.'));tr.firstChild.colSpan=8;tableBody.append(tr);}
+   rows.forEach(row=>{const tr=make('tr',row.team&&row.team.toLowerCase().includes('manchester united')?'united-row':'');[row.position,row.team,row.played,row.won,row.drawn,row.lost,row.goalDifference,row.points].forEach((value,index)=>{const td=make('td','',value===null||value===undefined?'—':String(value));tr.append(td);});tableBody.append(tr);});
+  }
   const now=Date.now();
   const ordered=[...matches].sort((a,b)=>new Date(a.utcDate)-new Date(b.utcDate));
   const upcoming=ordered.filter(m=>new Date(m.utcDate).getTime()>=now-36*60*60*1000);
