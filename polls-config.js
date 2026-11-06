@@ -11,5 +11,6 @@ window.UBTP_POLL_CONFIG = {
   weeklyFootballEmbedUrl: "",
   glazerMandateEmbedUrl: "",
   glazerMandateResultsUrl: "",
+  beckhamTakeoverEmbedUrl: "",
   beckhamTakeoverEmbedUrl: ""
 };
