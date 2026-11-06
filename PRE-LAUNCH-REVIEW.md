@@ -1,6 +1,6 @@
 # Pre-launch review — UNITED BACK TO THE PEOPLE
 
-This checklist is for reviewing the website before any public launch. The review branch is intended to generate a Netlify Deploy Preview; it does not publish changes to the production branch.
+This checklist records the remaining checks for the GitHub Pages site. The live site can be visited, but a successful deployment does not mean every advertised feature is complete.
 
 ## Visitor experience
 - [ ] Open the site on a phone and a desktop.
@@ -17,7 +17,7 @@ This checklist is for reviewing the website before any public launch. The review
 - [ ] Do not copy articles, photographs, graphics, or video without permission.
 
 ## Live football data
-- [ ] Add the football-data.org token as the GitHub Actions secret named FOOTBALL_DATA_TOKEN.
+- [ ] Add the football-data.org token as the GitHub Actions secret named FOOTBALL_DATA_TOKEN (adult-supervised account setup; never put the token in site code).
 - [ ] Run the football-data update workflow manually.
 - [ ] Confirm that data/football.json contains current sourced data and an update timestamp.
 - [ ] Check that fixtures, results, and the league table render correctly.
@@ -25,12 +25,12 @@ This checklist is for reviewing the website before any public launch. The review
 
 ## Safety, privacy, and governance
 - [ ] Keep personal phone numbers, private email addresses, home/school details, and personal accounts off the public site.
-- [ ] Keep public comments, member sign-ups, fundraising, elections, petitions, and contact submissions disabled until safe moderation and trusted adult oversight are in place.
+- [ ] Keep public comments, member sign-ups, fundraising, elections, petitions, and contact submissions disabled until the adult moderator has reviewed and approved the platform, privacy settings, and moderation workflow.\n- [ ] Keep the two poll programmes separate: football questions and ownership/campaign questions.\n- [ ] Test the voting service's privacy, duplicate-response controls, closing date, result export and moderation before enabling voting.\n- [ ] Do not describe an open online poll as representative of all Manchester United supporters.\n- [ ] Do not collect phone numbers, school details, home addresses or unnecessary identifying information.
 - [ ] Make clear that this is an independent supporters' initiative and is not affiliated with or endorsed by Manchester United.
 - [ ] Keep campaign activity peaceful, lawful, evidence-based, and respectful.
 - [ ] Have a trusted adult review any public-facing campaign activity and any legal, financial, or data-protection commitments.
 
-## Final release decision
+## Known incomplete features (do not advertise as live)\n- Men's archive: 90 original profiles; the 989-player MUFCINFO A–Z register is an external reference and has not been imported into this site's own database.\n- Voting and ideas box: question sets are prepared, but no public voting/submission service is connected.\n- Football feed: code is prepared, but it is inactive until the API secret is configured and a successful run is verified.\n- News, transfers, women's fixtures and academy updates: require ongoing sourced editorial work; they are not automated.\n\n## Final release decision
 - [ ] Preview reviewed and corrections completed.
 - [ ] Data and source checks passed.
 - [ ] Privacy and moderation checks passed.
