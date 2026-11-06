@@ -22,9 +22,37 @@ This is a campaign slogan expressing supporters' frustration with the commercial
 - Respect for Manchester United's history and heritage.
 - An informed, inclusive international supporters' movement.
 
+## Automated Football Desk
+
+The Match Centre can publish Manchester United Premier League fixtures, results and the Premier League table from **football-data.org**.
+
+### One-time activation
+
+1. Create an account and obtain an API token from [football-data.org](https://www.football-data.org/).
+2. Open this repository on GitHub.
+3. Go to **Settings → Secrets and variables → Actions**.
+4. Under **Repository secrets**, choose **New repository secret**.
+5. Set the secret name to exactly `FOOTBALL_DATA_TOKEN`.
+6. Paste the API token into the secret value and save. Never put the token in a website file, commit, issue, or public message.
+7. Open the **Actions** tab and select **Update United football data**.
+8. Run the workflow once using **Run workflow**. Check the run completes successfully and that `data/football.json` is updated.
+
+The workflow then runs every six hours and commits refreshed data only when it changes. It uses the official v4 endpoints for Manchester United's Premier League matches and the Premier League standings. The site reads the public JSON file; the API token remains inside GitHub Actions.
+
+### Hosting
+
+The repository is configured for a static-site workflow. If Netlify is connected to the `main` branch, it should deploy new commits automatically. If the website is hosted elsewhere, configure that host to deploy the repository's `main` branch.
+
+### Scope and editorial standards
+
+- The automatic feed currently covers the **men's Premier League fixtures/results and league table only**.
+- It does not claim to provide live minute-by-minute commentary.
+- Women's team, academy, cup competitions, player statistics and transfer reporting need their own verified data sources and coverage permissions before being labelled automatic.
+- News articles, tactical analysis and opinion must be researched, attributed and reviewed by an editor. The site must never invent scores, sources, quotes, injuries or transfer claims.
+- If the feed is unavailable, the site displays a setup/unavailable message rather than made-up data.
+
 ## The Glazer ownership chapter
 
 The website's **The Glazer era** section documents the 2003–2026 ownership story, including the 2005 leveraged buyout, debt and financing costs, supporter protests, share sales, the post-Ferguson period, the 2024 INEOS minority investment, current liabilities, infrastructure questions and Avram Glazer's reported September 2026 remarks.
 
 The chapter distinguishes documented financial facts from supporter criticism and includes context on commercial growth and trophies during the same period. Sources are linked in the website section.
-
