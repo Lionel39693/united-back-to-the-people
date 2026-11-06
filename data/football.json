@@ -5,5 +5,7 @@
   "teamId": 66,
   "updatedAt": null,
   "source": "football-data.org",
-  "matches": []
+  "matches": [],
+  "standings": [],
+  "currentMatchday": null
 }
