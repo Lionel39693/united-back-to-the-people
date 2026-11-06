@@ -54,7 +54,7 @@ The repository is configured for a static-site workflow. The live static site is
 ## Current completion boundaries
 
 - The men's archive contains 90 original profiles. The separate MUFCINFO A–Z reference lists 989 players and remains an external source; its full list has not been imported into this project's own archive.
-- The supporter poll questions are prepared in two separate groups (football and ownership/campaign). Public voting and the ideas box are not live because the secure service, privacy controls, duplicate-response controls and moderation workflow still need configuration and testing.
+- The supporter poll questions are prepared. A Cloudflare Pages Functions voting endpoint and D1 schema now exist for the permanent ownership poll, but public voting is NOT live until the Cloudflare D1 database, `DB` binding and `VOTE_HASH_SECRET` are configured and the adult-supervised tests in `CLOUDFLARE-VOTING-SETUP.md` pass. The other consultation forms remain unconnected.
 - The football-data.org feed is code-ready but not active until the repository secret is configured and the update workflow succeeds.
 - News, transfers, women's fixtures, academy data and live match coverage are editorial/data workflows, not automatically populated features.
 
