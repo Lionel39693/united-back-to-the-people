@@ -17,6 +17,8 @@ main{padding:48px 0 76px}.notice{padding:18px 20px;background:#fff7e8;border:1px
 .ideas{margin-top:18px}.rules{background:#171717;color:white;padding:26px;border-radius:18px;margin-top:24px}.rules h2{margin:0 0 10px}.rules ul{padding-left:20px;color:#ddd}.rules li{margin:7px 0}.rules p{color:#ccc;font-size:.9rem}
 footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:white}
 @media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding:56px 0}.poll{padding:20px}.embed iframe{min-height:850px}}
+
+.live-vote{margin:20px 0;padding:20px;border:1px solid #e5e0d9;border-radius:14px;background:#fbfaf8}.live-vote h3{margin:0 0 8px;font-size:1.25rem}.vote-note{font-size:.86rem;color:#665f58}.live-vote form{display:grid;gap:12px;margin:16px 0}.live-vote label{display:flex;gap:10px;align-items:flex-start;padding:12px;background:white;border:1px solid #e5e0d9;border-radius:10px}.live-vote input{margin-top:5px;accent-color:#a5121b}.live-vote button{border:0;border-radius:999px;background:#a5121b;color:#fff;font-weight:850;padding:13px 18px;cursor:pointer}.live-vote button:disabled{opacity:.55;cursor:wait}.live-results{margin-top:20px;padding-top:16px;border-top:1px solid #e5e0d9}.result-row{margin:10px 0}.result-label{display:flex;justify-content:space-between;gap:12px;font-size:.86rem}.result-track{height:10px;border-radius:99px;background:#e9e4dc;overflow:hidden}.result-fill{height:100%;background:#a5121b;width:0}
 </style>
 </head>
 <body>
@@ -56,6 +58,18 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
    <li>Undecided — I need more information before choosing.</li>
   </ol>
  </div>
+ <div class="live-vote" id="ownership-vote">
+  <h3>Cast your response</h3>
+  <p class="vote-note">This is an open supporter consultation, not an official Manchester United ballot. One response per network is accepted; shared networks may share one response.</p>
+  <form id="ownership-vote-form">
+   <label><input type="radio" name="ownership-choice" value="remain" required> Yes — they should remain as controlling owners.</label>
+   <label><input type="radio" name="ownership-choice" value="change" required> No — Manchester United needs a change in controlling ownership.</label>
+   <label><input type="radio" name="ownership-choice" value="undecided" required> Undecided — I need more information before choosing.</label>
+   <button type="submit" id="ownership-submit">Submit my response</button>
+  </form>
+  <p id="ownership-message" role="status" aria-live="polite">Voting will activate after the campaign administrator configures and tests the secure voting service.</p>
+  <div class="live-results" aria-live="polite"><strong>Public results</strong><p id="ownership-total">Results unavailable until voting is configured.</p><div id="ownership-bars"></div></div>
+ </div>
  <p>One response per person is the preferred standard. If the form requires Google sign-in, that must be disclosed. If it is open without sign-in, duplicate responses cannot reliably be prevented. We will report the actual response count and the collection method, not claim that every response is a verified supporter.</p>
  <span class="poll-state" id="mandate-state">Permanent poll connection pending</span>
  <div class="embed" id="mandate-embed" hidden></div>
@@ -79,21 +93,7 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
  <div class="pending" id="beckham-pending">This question is published for discussion, but voting is not open yet. A published form must be connected and tested before responses are collected.</div>
 </section>
 
-<section class="poll" style="margin-top:18px" id="beckham-takeover">
- <div class="tag">Programme 06 · The hypothetical takeover debate</div>
- <h2>The Beckham takeover: would you rather?</h2>
- <p><strong>Would you prefer a David Beckham-led takeover of Manchester United over continued Glazer ownership?</strong></p>
- <p class="fine">A cheeky hypothetical supporter question — not a claim that David Beckham has announced or proposed a takeover. Any bid would need a credible ownership structure, financing and a clear plan for the club.</p>
- <ol class="questions">
-  <li>Absolutely — I'd prefer a Beckham-led takeover.</li>
-  <li>No — I'd prefer a different new ownership option.</li>
-  <li>Neither — I want genuine supporter ownership.</li>
-  <li>Undecided — I need more information first.</li>
- </ol>
- <span class="poll-state" id="beckham-state">Debate poll connection pending</span>
- <div class="embed" id="beckham-embed" hidden></div>
- <div class="pending" id="beckham-pending">This question is published for discussion, but voting is not open yet. A published form must be connected and tested before responses are collected.</div>
-</section>
+
 <section class="rules" id="milestone">
  <h2>First milestone: 10,000 responses</h2>
  <p>The permanent ownership poll stays open until it reaches <strong>10,000 responses</strong>. This is a campaign mobilisation milestone, not a legal threshold and not a mechanism that forces an ownership change.</p>
@@ -104,7 +104,61 @@ footer{background:#151515;color:#aaa;padding:26px 0;font-size:.8rem}footer .wrap
 <section class="rules"><h2>How we handle responses</h2><ul><li>Each form will display its exact question, opening and closing dates, and response method.</li><li>We will publish response counts and results only after checking the form's data.</li><li>An open online consultation is not a formal vote of all Manchester United supporters.</li><li>We will not claim anonymity, one-person-one-vote or verified supporter status unless the form settings genuinely provide it.</li><li>Do not submit phone numbers, home addresses, school details, passwords or other private information.</li><li>Ideas and comments are moderated. Abuse, threats, discrimination and personal allegations will not be published.</li></ul><p>Independent supporters' project. Not affiliated with or endorsed by Manchester United Football Club.</p></section>
 </main>
 <footer><div class="wrap"><span>UNITED BACK TO THE PEOPLE · Our club. Our history. Our voice.</span><a href="./index.html">Return to the main website</a></div></footer>
-<script src="./polls-config.js"></script>
+<script>
+(function(){
+ const config=window.UBTP_POLL_CONFIG||{};
+ const items=[["football","footballEmbedUrl"],["movement","movementEmbedUrl"],["ideas","ideasEmbedUrl"],["weekly","weeklyFootballEmbedUrl"],["beckham","beckhamTakeoverEmbedUrl"]];
+ let connected=0;
+ for(const [id,key] of items){
+  const url=config[key],embed=document.getElementById(id+"-embed"),pending=document.getElementById(id+"-pending"),state=document.getElementById(id+"-state");
+  if(typeof url==="string" && /^https:\/\/docs\.google\.com\/forms\/.*viewform/.test(url) && embed && pending && state){
+   const frame=document.createElement("iframe");frame.src=url;frame.title=id+" supporter consultation";frame.loading="lazy";frame.referrerPolicy="strict-origin-when-cross-origin";
+   embed.appendChild(frame);embed.hidden=false;pending.hidden=true;state.textContent="Connected · Google Forms";connected++;
+  }
+ }
+ const status=document.getElementById("launch-status");
+ const form=document.getElementById("ownership-vote-form"),message=document.getElementById("ownership-message"),submit=document.getElementById("ownership-submit");
+ const total=document.getElementById("ownership-total"),bars=document.getElementById("ownership-bars");
+ const labels={remain:"Yes — keep the Glazers",change:"No — change controlling ownership",undecided:"Undecided"};
+ async function loadResults(){
+  try{
+   const r=await fetch("./api/results",{cache:"no-store"});if(!r.ok)throw new Error("Voting service not configured");
+   const data=await r.json();total.textContent=data.total+" recorded response"+(data.total===1?"":"s")+" · aggregate results";
+   bars.replaceChildren();
+   for(const key of ["remain","change","undecided"]){
+    const count=Number(data.counts[key]||0),pct=data.total?Math.round(count/data.total*100):0;
+    const row=document.createElement("div");row.className="result-row";
+    const label=document.createElement("div");label.className="result-label";
+    const name=document.createElement("span");name.textContent=labels[key];
+    const value=document.createElement("strong");value.textContent=count+" ("+pct+"%)";
+    label.append(name,value);
+    const track=document.createElement("div");track.className="result-track";
+    const fill=document.createElement("div");fill.className="result-fill";fill.style.width=pct+"%";track.append(fill);
+    row.append(label,track);bars.append(row);
+   }
+   message.textContent="Voting service connected. Your response is stored as an anonymous network-level duplicate-control hash; see the limitations above.";
+   submit.disabled=false;status.textContent="Ownership poll service connected — test before public launch.";
+  }catch(e){
+   total.textContent="Results unavailable until the voting database is configured.";
+   message.textContent="Voting is not open yet. The Cloudflare database and secret must be configured and tested before public launch.";
+   submit.disabled=true;
+   status.textContent="The consultation page is published; voting is not yet open.";
+  }
+ }
+ if(form){
+  submit.disabled=true;loadResults();
+  form.addEventListener("submit",async event=>{
+   event.preventDefault();const choice=form.querySelector('input[name="ownership-choice"]:checked');if(!choice)return;
+   submit.disabled=true;message.textContent="Submitting response…";
+   try{
+    const r=await fetch("./api/vote",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({pollId:"glazer-ownership-2026",optionId:choice.value})});
+    const data=await r.json();if(!r.ok)throw new Error(data.error||"The response could not be recorded.");
+    message.textContent=data.message;form.reset();await loadResults();
+   }catch(e){message.textContent=e.message;submit.disabled=false;}
+  });
+ }
+})();
+</script>
 <script>
 (function(){
  const config=window.UBTP_POLL_CONFIG||{};
