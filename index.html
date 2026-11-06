@@ -51,18 +51,54 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 .newsroom .editorial-note strong{display:block;margin-bottom:4px}
 @media(max-width:760px){.newsroom .desk-grid{grid-template-columns:1fr}.newsroom .coverage-grid{grid-template-columns:1fr}}
 
+
+/* Two distinct destinations: football coverage and the supporters' movement */
+.portal-landing{padding:66px 0 74px;background:#171717;color:#fff}
+.portal-landing .portal-kicker{color:#e7c77e;font-size:.72rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase}
+.portal-landing h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:.98;letter-spacing:-.055em;margin:12px 0}
+.portal-landing .portal-intro{max-width:720px;color:#ddd;font-size:1.08rem}
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.portal-card{display:flex;flex-direction:column;justify-content:space-between;min-height:250px;padding:28px;border-radius:20px;text-decoration:none;border:1px solid #ffffff2b;background:linear-gradient(135deg,#a5121b,#710b12);color:white}
+.portal-card.movement{background:linear-gradient(135deg,#333,#171717)}
+.portal-card .portal-tag{font-size:.72rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;color:#f1d38d}
+.portal-card h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.05;margin:14px 0}
+.portal-card p{color:#f1eeee;max-width:490px;margin:0}
+.portal-card .portal-link{margin-top:24px;font-weight:900}
+.portal-card:hover{transform:translateY(-3px);transition:transform .2s ease}
+.football-hub{padding:74px 0;background:#fff}
+.football-hub .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.football-hub .hub-link{display:block;padding:20px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#faf9f7}
+.football-hub .hub-link strong{display:block;font-size:1.02rem;margin-bottom:5px}
+.football-hub .hub-link span{color:var(--muted);font-size:.9rem}
+.football-section{padding:70px 0;border-bottom:1px solid var(--line)}
+.football-section:nth-of-type(even){background:#fff}
+.football-section .section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.football-section .feature{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.football-section .feature h3{margin:0 0 8px;font-size:1.08rem}
+.football-section .feature p{margin:0;color:var(--muted);font-size:.92rem}
+.football-section .status-note{margin-top:20px;padding:16px 18px;background:#f7f5f1;border-left:4px solid var(--red);border-radius:0 12px 12px 0;font-size:.9rem}
+.section-eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:950;color:var(--red)}
+@media(max-width:760px){.portal-grid{grid-template-columns:1fr}.football-hub .hub-grid,.football-section .section-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <div class="topline">Independent supporters' initiative · International · Peaceful and democratic</div>
 <header><div class="wrap nav">
 <a class="brand" href="#home" aria-label="United Back to the People home"><span class="crest">U</span><span>UNITED BACK<br>TO THE PEOPLE</span></a>
-<nav class="links" id="links" aria-label="Main navigation"><a href="#newsroom">Newsroom</a><a href="#learning-index">Explore</a><a href="#history">History</a><a href="#sagas">Sagas</a><a href="#ballon-dor">Ballon d’Or</a><a href="#yearbook">Yearbook</a><a href="#legends">Legends</a><a href="#greatest-squads">Squads &amp; trophies</a><a href="#glazer-era">Ownership</a><a href="#charter">Charter</a><a href="#united-worldwide">Worldwide</a><a href="#ownership-model">Fan ownership</a><a href="#accountability">Evidence</a><a href="#manifesto">Manifesto</a><a href="#voice">Supporter voice</a></nav>
+<nav class="links" id="links" aria-label="Main navigation"><a href="#football-home">Football</a><a href="#newsroom">Newsroom</a><a href="#match-centre">Match Centre</a><a href="#womens-hub">Women</a><a href="#history">Club History</a><a href="#movement-home">Movement</a><a href="#ownership-model">Supporter Ownership</a><a href="#voice">Supporter Voice</a></nav>
 <a class="nav-cta" href="#voice">Have your say ↗</a><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="links">☰</button>
 </div></header>
 <main>
-<section class="hero" id="home"><div class="wrap hero-inner">
-<div class="eyebrow">A supporters' movement for the future of United</div>
+<section class="portal-landing" id="top"><div class="wrap">
+<div class="portal-kicker">Independent. Supporter-led. Built around United.</div>
+<h1>ONE CLUB. TWO DISTINCT DESTINATIONS.</h1>
+<p class="portal-intro">Follow everything happening on the pitch — and explore the independent movement working for a stronger supporter voice off it. Football coverage and the ownership campaign have separate spaces, clear purposes and their own navigation.</p>
+<div class="portal-grid">
+<a class="portal-card" href="#football-home"><div><div class="portal-tag">The football platform</div><h2>THE UNITED FOOTBALL DESK</h2><p>News, match coverage, men's and women's teams, transfers, tactics, academy, history and everything happening across United.</p></div><div class="portal-link">Enter football coverage →</div></a>
+<a class="portal-card movement" href="#movement-home"><div><div class="portal-tag">The supporters' movement</div><h2>UNITED BACK TO THE PEOPLE</h2><p>Our independent campaign for transparency, accountability, democratic supporter representation and a long-term future of supporter ownership.</p></div><div class="portal-link">Enter the movement →</div></a>
+</div></div></section><section class="hero" id="movement-home"><div class="wrap hero-inner">
+<div class="eyebrow">The supporters' movement · Independent · International</div>
 <h1>OUR CLUB.<br>OUR HISTORY.<br>OUR VOICE.</h1>
 <p>UNITED BACK TO THE PEOPLE is an independent international initiative bringing Manchester United supporters together to call for transparency, accountability and a future in which the supporters own the club.</p>
 <div class="actions"><a class="btn" href="#mission">Discover our mission →</a><a class="btn outline" href="#voice">Have your say</a></div>
@@ -314,7 +350,21 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 </div></section>
 
 
-<section class="newsroom" id="newsroom">
+<section class="football-hub" id="football-home"><div class="wrap">
+<div class="head"><div class="kicker">The football platform</div><h2>Everything happening at Manchester United.</h2><p class="lead">An independent editorial home for men's and women's football, matchday coverage, transfers, tactical insight, academy development and the club's story.</p></div>
+<div class="hub-grid">
+<a class="hub-link" href="#newsroom"><strong>Daily Newsroom</strong><span>Club updates, press conferences, injuries, developments and verified reports.</span></a>
+<a class="hub-link" href="#match-centre"><strong>Match Centre</strong><span>Fixtures, results, previews, team news and post-match reports.</span></a>
+<a class="hub-link" href="#transfer-centre"><strong>Transfer Centre</strong><span>Official moves, credible reports and clearly labelled rumours.</span></a>
+<a class="hub-link" href="#tactical-room"><strong>Tactical Room</strong><span>Formations, pressing, build-up, player roles and match analysis.</span></a>
+<a class="hub-link" href="#player-database"><strong>Player Database</strong><span>Men's, women's and academy player profiles and records.</span></a>
+<a class="hub-link" href="#womens-hub"><strong>Women's United</strong><span>Dedicated women's first-team, academy, history and match coverage.</span></a>
+<a class="hub-link" href="#academy-watch"><strong>Academy Watch</strong><span>Under-21s, Under-18s and emerging talent.</span></a>
+<a class="hub-link" href="#debate-room"><strong>Debate Room</strong><span>Editorial opinions and respectful supporter debate.</span></a>
+<a class="hub-link" href="#media-library"><strong>Media Library</strong><span>Original graphics, explainers, posters and historical features.</span></a>
+<a class="hub-link" href="#history"><strong>Club History</strong><span>From Newton Heath to the present day, with sourced historical chapters.</span></a>
+<a class="hub-link" href="#financial-watch"><strong>Financial Watch</strong><span>Club accounts and ownership facts, presented separately from campaign opinion.</span></a>
+</div></div></section><section class="newsroom" id="newsroom">
 <div class="wrap">
 <div class="head"><div class="kicker">The independent United newsroom</div><h2>Every story. Every match. Every voice.</h2><p class="lead">A fan-led newsroom for Manchester United: timely club updates, transfer developments, matchday coverage and analysis that goes beyond the scoreline.</p></div>
 <div class="desk-grid">
@@ -351,7 +401,41 @@ section{padding:80px 0}.mission,.governance{background:#fff}.head{max-width:740p
 <div class="editorial-note"><strong>How we will launch responsibly</strong>We are starting with written updates and match analysis. Live audience submissions, comments, polls and direct contact stay closed until secure moderation and trusted adult oversight are in place. The founder's private contact details will not be published.</div>
 </div></section>
 
-<section class="learning-index" id="learning-index"><div class="wrap"><div class="head"><div class="kicker">The United learning hub</div><h2>New to United? Start here.</h2><p class="lead">A guided route through the club: origins, eras, trophies, people, turning points, ownership and the future. Work through the chapters in any order, follow the sources and make up your own mind.</p></div><div class="learning-grid"><a href="#history">01 · Origins and timeline</a><a href="#sagas">02 · Famous sagas</a><a href="#legends">03 · Players and legends</a><a href="#greatest-squads">04 · Teams and trophies</a><a href="#glazer-era">05 · Ownership history</a><a href="#united-worldwide">06 · United worldwide</a><a href="#ownership-model">07 · Supporter ownership</a><a href="#manifesto">08 · Our future vision</a><a href="#ballon-dor">Ballon d’Or winners</a><a href="#yearbook">Yearbook</a><a href="#myths-facts">09 · Myth vs fact</a><a href="#supporter-questions">10 · Supporter questions</a></div><div class="note-panel"><strong>How this archive works:</strong> Historical events are presented with sources. Where accounts differ, we say so. Campaign positions are labelled as positions—not neutral historical facts. This is a growing guide, not a claim that one page can contain every match, player or debate.</div></div></section>
+<section class="football-section" id="match-centre"><div class="wrap">
+<div class="section-eyebrow">Fixtures · Results · Matchday</div><h2>Match Centre</h2><p class="lead">A single destination for men's and women's fixtures, results, previews, confirmed line-ups and post-match reporting.</p>
+<div class="section-grid"><article class="feature"><h3>Fixtures &amp; results</h3><p>Competition, opponent, date, kick-off time, venue and final score, updated only from verified fixture sources.</p></article><article class="feature"><h3>Matchday live desk</h3><p>Confirmed starting XIs, substitutes, key events and full-time status. No fabricated live commentary or unverified team news.</p></article><article class="feature"><h3>Post-match reports</h3><p>Scoreline, tactical story, turning points, player performances, coaching decisions and what comes next.</p></article></div>
+<div class="status-note"><strong>Publishing standard:</strong> This is the Match Centre structure. Fixtures and scores will be added as verified updates; no placeholder scores or invented upcoming matches.</div></div></section>
+<section class="football-section" id="transfer-centre"><div class="wrap">
+<div class="section-eyebrow">Recruitment · Contracts · Squad planning</div><h2>Transfer Centre</h2><p class="lead">A transparent tracker for men's and women's squad movements, renewals and recruitment reporting.</p>
+<div class="section-grid"><article class="feature"><h3>Official</h3><p>Completed or announced by Manchester United or the relevant club/competition authority.</p></article><article class="feature"><h3>Reported</h3><p>Attributed to identifiable journalists or publications, with links, dates and the exact level of certainty.</p></article><article class="feature"><h3>Rumour / unconfirmed</h3><p>Clearly labelled speculation. We do not upgrade a rumour into a likely deal without evidence.</p></article></div>
+<div class="status-note">Every transfer entry should record player, clubs involved, men's or women's team, source, date, reported fee if sourced, and status. Corrections stay visible.</div></div></section>
+<section class="football-section" id="tactical-room"><div class="wrap">
+<div class="section-eyebrow">The football, explained</div><h2>The Tactical Room</h2><p class="lead">Analysis built around evidence and roles — not just goals, highlights or hot takes.</p>
+<div class="section-grid"><article class="feature"><h3>Team structure</h3><p>Formations, in-possession and out-of-possession shapes, pressing, rest defence and transitions.</p></article><article class="feature"><h3>Player roles</h3><p>Movement, positioning, duels, distribution, chance creation, defensive actions and decision-making.</p></article><article class="feature"><h3>Match film notes</h3><p>Key sequences described in original words, with diagrams or properly licensed material where available.</p></article></div>
+<div class="status-note">Our analysis will distinguish observable match events from interpretation. We will not reproduce copyrighted broadcast footage.</div></div></section>
+<section class="football-section" id="player-database"><div class="wrap">
+<div class="section-eyebrow">Squads · Profiles · Records</div><h2>United Player Database</h2><p class="lead">A searchable archive for the men's first team, women's first team and academy. Every profile should use dated, sourced statistics.</p>
+<div class="section-grid"><article class="feature"><h3>Men's first team</h3><p>Position, squad number, appearances, goals, assists, honours, career milestones and role analysis.</p></article><article class="feature"><h3>Women's first team</h3><p>Profiles, career history, appearances, goals, honours and contributions across competitions.</p></article><article class="feature"><h3>Academy players</h3><p>Development pathway, age-group appearances where available, progression and verified milestones.</p></article></div>
+<div class="status-note">Statistics must identify the competition and date range. We will not mix league-only numbers with all-competition totals.</div></div></section>
+<section class="football-section" id="womens-hub"><div class="wrap">
+<div class="section-eyebrow">One club · Equal editorial attention</div><h2>Manchester United Women</h2><p class="lead">A dedicated destination for the women's first team, academy, staff, supporters and the wider women's game.</p>
+<div class="section-grid"><article class="feature"><h3>Women's news desk</h3><p>Club announcements, interviews, contracts, transfers, squad availability and coaching updates.</p></article><article class="feature"><h3>Fixtures &amp; match analysis</h3><p>WSL, domestic cups and European competition where applicable, with previews, reports and tactical breakdowns.</p></article><article class="feature"><h3>Players, academy &amp; history</h3><p>Profiles, emerging talent, milestones, trophies and the story of the women's programme.</p></article></div>
+<div class="status-note">Women's coverage receives the same editorial care, match-report depth and regular attention as men's coverage — never treated as a sidebar.</div></div></section>
+<section class="football-section" id="academy-watch"><div class="wrap">
+<div class="section-eyebrow">The next generation</div><h2>Academy Watch</h2><p class="lead">Follow the pathway from youth football to the senior teams, including the men's and women's development programmes.</p>
+<div class="section-grid"><article class="feature"><h3>Under-21s</h3><p>Fixtures, results, player development and senior-team progression.</p></article><article class="feature"><h3>Under-18s</h3><p>Youth competitions, emerging players, coaching and landmark performances.</p></article><article class="feature"><h3>Pathway tracker</h3><p>Verified debuts, first-team training milestones and academy graduates' careers.</p></article></div></div></section>
+<section class="football-section" id="debate-room"><div class="wrap">
+<div class="section-eyebrow">Opinion · Discussion</div><h2>The Debate Room</h2><p class="lead">A place for strong football opinions backed by reasons, evidence and respect.</p>
+<div class="section-grid"><article class="feature"><h3>Editorial columns</h3><p>Manager decisions, recruitment, squad balance, performances and club direction.</p></article><article class="feature"><h3>Supporter perspectives</h3><p>Selected, moderated viewpoints with clear attribution and no exposure of private details.</p></article><article class="feature"><h3>Debate guidelines</h3><p>Challenge ideas, not people. No harassment, threats, discriminatory abuse or unverified allegations.</p></article></div>
+<div class="status-note">Public comments and open submissions remain switched off until secure moderation and trusted adult oversight are available.</div></div></section>
+<section class="football-section" id="financial-watch"><div class="wrap">
+<div class="section-eyebrow">Club finances · Governance · Reporting</div><h2>Financial Watch</h2><p class="lead">A fact-led reference desk for club accounts, debt, revenue, spending, ownership and infrastructure developments.</p>
+<div class="section-grid"><article class="feature"><h3>Financial reports</h3><p>Published accounts, revenue categories, costs and clearly explained reporting periods.</p></article><article class="feature"><h3>Ownership &amp; investment</h3><p>Documented shareholding, capital commitments, dividends, debt and governance developments.</p></article><article class="feature"><h3>What the numbers mean</h3><p>Plain-language explainers that separate reported figures from campaign arguments and estimates.</p></article></div>
+<div class="status-note">Financial Watch is an editorial research section. The supporters' movement's demands and proposals remain in their separate campaign area.</div></div></section>
+<section class="football-section" id="media-library"><div class="wrap">
+<div class="section-eyebrow">Original work · Shareable stories</div><h2>Media Library</h2><p class="lead">A home for original visual journalism and supporter materials, with clear credits for archival images and licensed assets.</p>
+<div class="section-grid"><article class="feature"><h3>Match graphics</h3><p>Original previews, full-time cards, tactical diagrams and player-performance explainers.</p></article><article class="feature"><h3>History &amp; infographics</h3><p>Timelines, trophy records, legendary teams and landmark moments with sources.</p></article><article class="feature"><h3>Campaign materials</h3><p>Supporter movement posters and explainers kept in the separate movement identity and section.</p></article></div>
+<div class="status-note">We create our own graphics and text, credit photographers and archives, and do not repost copyrighted articles or match footage.</div></div></section><section class="learning-index" id="learning-index"><div class="wrap"><div class="head"><div class="kicker">The United learning hub</div><h2>New to United? Start here.</h2><p class="lead">A guided route through the club: origins, eras, trophies, people, turning points, ownership and the future. Work through the chapters in any order, follow the sources and make up your own mind.</p></div><div class="learning-grid"><a href="#history">01 · Origins and timeline</a><a href="#sagas">02 · Famous sagas</a><a href="#legends">03 · Players and legends</a><a href="#greatest-squads">04 · Teams and trophies</a><a href="#glazer-era">05 · Ownership history</a><a href="#united-worldwide">06 · United worldwide</a><a href="#ownership-model">07 · Supporter ownership</a><a href="#manifesto">08 · Our future vision</a><a href="#ballon-dor">Ballon d’Or winners</a><a href="#yearbook">Yearbook</a><a href="#myths-facts">09 · Myth vs fact</a><a href="#supporter-questions">10 · Supporter questions</a></div><div class="note-panel"><strong>How this archive works:</strong> Historical events are presented with sources. Where accounts differ, we say so. Campaign positions are labelled as positions—not neutral historical facts. This is a growing guide, not a claim that one page can contain every match, player or debate.</div></div></section>
 
 <section class="sagas" id="sagas"><div class="wrap"><div class="head"><div class="kicker">The stories that shaped the club</div><h2>The United sagas.</h2><p class="lead">Football history is not only trophies. It is also arguments, turning points, personalities, near-misses, comebacks and decisions that changed the club. Each account explains what happened, why it mattered and what remains disputed.</p></div><div class="saga-grid">
 <article class="saga-card"><div class="tag">1902 · Survival</div><h3>The rescue and rebirth of Newton Heath</h3><p>Financial trouble threatened Newton Heath. Investment associated with John Henry Davies helped secure the club's future, and the Manchester United name was adopted in 1902. This is the origin of the modern identity.</p><a class="source" href="https://www.manutd.com/en/club/history/history-by-decade/1878-1909" target="_blank" rel="noopener">Official early history ↗</a></article>
