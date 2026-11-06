@@ -41,7 +41,7 @@ The workflow then runs every six hours and commits refreshed data only when it c
 
 ### Hosting
 
-The repository is configured for a static-site workflow. If Netlify is connected to the `main` branch, it should deploy new commits automatically. If the website is hosted elsewhere, configure that host to deploy the repository's `main` branch.
+The repository is configured for a static-site workflow. The live static site is published with GitHub Pages from the `main` branch and repository root. The expected project URL is `https://lionel39693.github.io/united-back-to-the-people/`. Check **Settings → Pages** to confirm the publishing source is `main` and `/(root)`. New commits to `main` trigger a Pages deployment.
 
 ### Scope and editorial standards
 
@@ -50,6 +50,15 @@ The repository is configured for a static-site workflow. If Netlify is connected
 - Women's team, academy, cup competitions, player statistics and transfer reporting need their own verified data sources and coverage permissions before being labelled automatic.
 - News articles, tactical analysis and opinion must be researched, attributed and reviewed by an editor. The site must never invent scores, sources, quotes, injuries or transfer claims.
 - If the feed is unavailable, the site displays a setup/unavailable message rather than made-up data.
+
+## Current completion boundaries
+
+- The men's archive contains 90 original profiles. The separate MUFCINFO A–Z reference lists 989 players and remains an external source; its full list has not been imported into this project's own archive.
+- The supporter poll questions are prepared in two separate groups (football and ownership/campaign). Public voting and the ideas box are not live because the secure service, privacy controls, duplicate-response controls and moderation workflow still need configuration and testing.
+- The football-data.org feed is code-ready but not active until the repository secret is configured and the update workflow succeeds.
+- News, transfers, women's fixtures, academy data and live match coverage are editorial/data workflows, not automatically populated features.
+
+These are explicit launch limitations, not completed features.
 
 ## The Glazer ownership chapter
 
