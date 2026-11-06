@@ -51,7 +51,16 @@ The repository is configured for a static-site workflow. The live static site is
 - News articles, tactical analysis and opinion must be researched, attributed and reviewed by an editor. The site must never invent scores, sources, quotes, injuries or transfer claims.
 - If the feed is unavailable, the site displays a setup/unavailable message rather than made-up data.
 
-## Current completion boundaries\n\n- The men's archive contains 90 original profiles. The separate MUFCINFO A–Z reference lists 989 players and remains an external source; its full list has not been imported into this project's own archive.\n- The supporter poll questions are prepared in two separate groups (football and ownership/campaign). Public voting and the ideas box are not live because the secure service, privacy controls, duplicate-response controls and moderation workflow still need configuration and testing.\n- The football-data.org feed is code-ready but not active until the repository secret is configured and the update workflow succeeds.\n- News, transfers, women's fixtures, academy data and live match coverage are editorial/data workflows, not automatically populated features.\n\nThese are explicit launch limitations, not completed features.\n\n## The Glazer ownership chapter
+## Current completion boundaries
+
+- The men's archive contains 90 original profiles. The separate MUFCINFO A–Z reference lists 989 players and remains an external source; its full list has not been imported into this project's own archive.
+- The supporter poll questions are prepared in two separate groups (football and ownership/campaign). Public voting and the ideas box are not live because the secure service, privacy controls, duplicate-response controls and moderation workflow still need configuration and testing.
+- The football-data.org feed is code-ready but not active until the repository secret is configured and the update workflow succeeds.
+- News, transfers, women's fixtures, academy data and live match coverage are editorial/data workflows, not automatically populated features.
+
+These are explicit launch limitations, not completed features.
+
+## The Glazer ownership chapter
 
 The website's **The Glazer era** section documents the 2003–2026 ownership story, including the 2005 leveraged buyout, debt and financing costs, supporter protests, share sales, the post-Ferguson period, the 2024 INEOS minority investment, current liabilities, infrastructure questions and Avram Glazer's reported September 2026 remarks.
 
