@@ -1,9 +1,11 @@
 /* Public poll embeds.
- * Paste the published Google Forms EMBED URLs below (not editor URLs).
- * Leave a value empty until that form has been tested and approved for launch.
+ * Paste published Google Forms EMBED URLs below (not editor URLs).
+ * Keep blank until each form is approved and tested.
  */
 window.UBTP_POLL_CONFIG = {
   footballEmbedUrl: "",
   movementEmbedUrl: "",
-  ideasEmbedUrl: ""
+  ideasEmbedUrl: "",
+  weeklyFootballEmbedUrl: "",
+  glazerMandateEmbedUrl: ""
 };

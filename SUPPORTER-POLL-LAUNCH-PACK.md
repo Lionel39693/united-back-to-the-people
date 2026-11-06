@@ -131,3 +131,90 @@ For every poll, publish:
 - Limitations: self-selected online respondents are not a representative sample of all United supporters.
 
 Never invent, estimate or manually alter vote totals.
+
+
+# Weekly football debates and Glazer supporter mandate
+
+## Weekly football round — three debate questions
+
+Run these as three required multiple-choice questions in one public Google Form:
+
+1. **Should United prioritise academy graduates over expensive signings, even if it costs results in the short term?**
+   - Yes — academy pathway must come first
+   - Balance academy and recruitment equally
+   - No — select the strongest team regardless of age or origin
+   - It depends on the player and situation
+
+2. **What is United's biggest football problem?**
+   - Recruitment and squad-building
+   - Coaching and tactical direction
+   - Leadership and decision-making above the manager
+   - A combination of all three
+
+3. **Would you accept three seasons without a major trophy if it meant building a sustainable team for the long term?**
+   - Yes — sustainable foundations matter more
+   - No — United must compete for trophies every season
+   - Only if there is clear progress and accountability
+   - Unsure
+
+Publish a new round weekly. Keep each round's exact wording and dates in the results archive. For each round, allow one response per person where the platform's settings can reasonably support it. If sign-in is required, disclose that clearly. Do not claim identity verification or anonymity unless the settings and data support it.
+
+## Glazer accountability and supporter mandate form
+
+Create a separate form with these questions:
+
+1. **Do you believe Manchester United would be better off without the Glazer family as controlling owners, even if the replacement ownership were not perfect?**
+   - Yes
+   - Yes, if supporters receive meaningful governance rights
+   - No — a replacement could be worse
+   - It depends on the ownership model
+   - Undecided
+
+2. **Which long-term ownership model should United work towards?**
+   - Majority supporter ownership
+   - A supporter trust with meaningful shareholding and governance rights
+   - A mixed model with substantial supporter representation
+   - Another model / unsure
+
+3. **What minimum supporter rights should any future owner guarantee?**
+   - Elected supporter representation
+   - Regular published financial and governance reporting
+   - Formal consultation on major heritage/stadium decisions
+   - A combination of these
+   - Other / unsure
+
+4. **Which issue should the campaign prioritise?**
+   - Debt and financing transparency
+   - Supporter representation
+   - Stadium and infrastructure investment
+   - Ownership change
+   - Independent accountability and reporting
+
+5. **Would you support a peaceful, evidence-based international campaign calling for accountable ownership and meaningful supporter representation?**
+   - Yes
+   - No
+   - I need more information
+
+Do not ask for phone numbers, home addresses, school details, passwords, or unnecessary personal information. Keep any optional country question broad and optional.
+
+## First milestone: 10,000 unique supporter responses
+
+The campaign's first public milestone is **10,000 unique supporter responses**. This is a practical mobilisation and credibility milestone, not a legal threshold and not a mechanism that forces an ownership change.
+
+At 10,000, publish a transparent report showing:
+- Exact questions and voting dates.
+- Number of unique responses and how duplicates were controlled.
+- Countries represented only if collected safely and voluntarily.
+- Counts and percentages for every option.
+- Limitations of an open, self-selected online consultation.
+- A clear, peaceful next-step proposal for supporter groups, club representatives, shareholders and media.
+
+Never count repeat submissions as new supporters. Run new weekly rounds so supporters can participate again in a fresh poll without inflating a single campaign mandate.
+
+## Website connection
+
+In `polls-config.js`, add the published Google Forms embed URL for:
+- `weeklyFootballEmbedUrl`
+- `glazerMandateEmbedUrl`
+
+Existing keys for the football, ownership and ideas forms remain available. The page reports how many of the five forms are connected. Test each form in a logged-out/incognito browser and on mobile before launch.
