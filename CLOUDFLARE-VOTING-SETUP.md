@@ -19,6 +19,8 @@ In Pages project → **Settings → Variables and Secrets**, add a Production se
 Do not use a password or reuse another account secret.
 
 ## 4. Deploy and test
+
+**Important:** The `functions/` directory must remain at the repository root. The project must use Git integration so pushes to `main` trigger a Pages build that includes the Functions. Dashboard Direct Upload does not support Pages Functions. If the existing Pages project was created as a Direct Upload project, create a new Git-integrated Pages project connected to this same GitHub repository; do not delete the existing site until the new one is verified.
 Cloudflare Pages must be connected to this GitHub repository, production branch `main`, framework preset **None**, build command blank, output directory `.`. Deploy the latest `main` commit.
 
 Test:
